@@ -1,0 +1,69 @@
+[gd_scene format=4 uid="uid://b88c4p34v4qai"]
+
+[ext_resource type="Script" uid="uid://dm6kpd8jtffhj" path="res://Player/Player.cs" id="1_l8h54"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n8a2t"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0fwit"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAD///////8AAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8daut"]
+resource_name = "Untitled_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/5//f//f/z//3/9//5//P/9f/z//nwAA/5//P/9fAAD/X////5//v/+f////X/+//x//f/9f/z//X/9//x//P/9f/3//n/8//5//f/9f/z//X/+//5//f/+f/7//X/9/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_n8a2t"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA//8AAP///////wAA//8AAP///////////////wAA////vwAA//////+//////////78AAAAA////vwAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVAAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7///wAAAABU1f///////1TV/////wAAVNX//wAA//9U1QAAAAAAAP///////wAA//8AAP//AAD/////AAAAAP///3//v/9//7//f/+//3//v/////////////////////9U1VTVVNVU1VTVVNVU1VTVAAD/fwAA/38AAP9/AAD/f6oqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_0fwit")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_earb5"]
+albedo_color = Color(0.043137256, 0.54901963, 1, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_earb5"]
+radius = 0.4859482
+
+[node name="Player" type="Node3D" unique_id=979417825]
+script = ExtResource("1_l8h54")
+bodySpeed = 500.0
+camSpeed = 6.0
+camDistance = 1.5
+camFOV = 120.0
+
+[node name="PlayerBody" type="RigidBody3D" parent="." unique_id=690458887]
+
+[node name="Cube" type="MeshInstance3D" parent="PlayerBody" unique_id=318953618]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("ArrayMesh_8daut")
+surface_material_override/0 = SubResource("StandardMaterial3D_earb5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody" unique_id=594646808]
+shape = SubResource("SphereShape3D_earb5")
+
+[node name="CameraAnchor" type="Node3D" parent="." unique_id=1615008968]
+
+[node name="Camera3D" type="Camera3D" parent="CameraAnchor" unique_id=1054058743]
+transform = Transform3D(1, 0, 0, 0, 0.9842574, 0.1767412, 0, -0.1767412, 0.9842574, 0, 0.57569695, 1.3945227)
