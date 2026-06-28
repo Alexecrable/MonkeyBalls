@@ -3,6 +3,10 @@ using System;
 
 public partial class Player : Node3D
 {
+	[Signal]
+	public delegate void TacosCollectEventHandler(int tacosGain);
+	[Signal]
+	public delegate void DeathSignalEventHandler();
 	[Export]
 	public float bodySpeed, camSpeed, camDistance, camFOV;
 
@@ -37,5 +41,17 @@ public partial class Player : Node3D
         body.ApplyCentralForce(ballPushVector);
 		//body.ApplyForce(ballPushVector, new Vector3(0, 0.1f, 0));
 		
+	}
+
+	public void UpdateTacos(int tacosGain)
+	{
+		EmitSignal(SignalName.TacosCollect, tacosGain);
+	}
+
+	public void Death()
+	{
+		EmitSignal(SignalName.DeathSignal);
+		QueueFree();
+		GD.Print("playerDeath");
 	}
 }

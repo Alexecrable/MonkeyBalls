@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.ComponentModel;
 
 public partial class Tacos : Node3D
 {
@@ -21,6 +22,7 @@ public partial class Tacos : Node3D
 	{
 		if(body.Name == "PlayerBody")
 		{
+			body.GetParent<Player>().UpdateTacos(1);
 			QueueFree();
 		}
 	}

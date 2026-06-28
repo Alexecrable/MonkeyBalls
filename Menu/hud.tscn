@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c2ok57ek12kkf"]
+
+[ext_resource type="Script" uid="uid://bpp6g5slitfbs" path="res://Menu/Hud.cs" id="1_bse2e"]
+[ext_resource type="Theme" uid="uid://bynmuxdeb8mi3" path="res://Menu/base_theme.tres" id="1_lhoek"]
+[ext_resource type="Texture2D" uid="uid://cyepguv08xybn" path="res://BlenderAssets/Textures/Steak.png" id="2_bse2e"]
+[ext_resource type="Texture2D" uid="uid://c50vkilnlfow0" path="res://BlenderAssets/Textures/Wrap.png" id="3_ou5f1"]
+
+[node name="Hud" type="CanvasLayer" unique_id=952796912]
+script = ExtResource("1_bse2e")
+
+[node name="Control" type="Control" parent="." unique_id=300956091]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_lhoek")
+
+[node name="TacosContainer" type="HBoxContainer" parent="Control" unique_id=1487921015]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 215.0
+offset_bottom = 117.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/TacosContainer" unique_id=778255739]
+layout_mode = 2
+texture = ExtResource("2_bse2e")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Control/TacosContainer" unique_id=1288958462]
+layout_mode = 2
+text = ": 24"
+
+[node name="LivesContainer" type="HBoxContainer" parent="Control" unique_id=227617290]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 923.0
+offset_right = 183.0
+offset_bottom = 1000.0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/LivesContainer" unique_id=945884898]
+layout_mode = 2
+texture = ExtResource("3_ou5f1")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Control/LivesContainer" unique_id=52859005]
+layout_mode = 2
+text = ": 3"
+
+[node name="TimerLabel" type="Label" parent="Control" unique_id=1009031270]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1746.0
+offset_top = 40.0
+offset_right = 1840.0
+offset_bottom = 117.0
+grow_horizontal = 0
+text = "999"
+
+[node name="Timer" type="Timer" parent="." unique_id=247089997]

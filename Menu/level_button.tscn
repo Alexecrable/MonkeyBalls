@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://njjr6edhufrs"]
+
+[ext_resource type="Script" uid="uid://dchr7s58pfsb3" path="res://Menu/LevelButton.cs" id="1_h43ld"]
+[ext_resource type="Texture2D" uid="uid://cbuuukowba66v" path="res://Levels/Previews/level2.png" id="1_qtx6g"]
+
+[node name="LevelButton" type="Button" unique_id=1977222029]
+offset_right = 208.0
+offset_bottom = 208.0
+icon = ExtResource("1_qtx6g")
+script = ExtResource("1_h43ld")

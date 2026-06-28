@@ -4,6 +4,7 @@ Super jeu tres cool où on pourra jouer en mode MONKEY ou en mode marble it up
 
 ## TO-DO
 
+- [Level](#level)
 - [Collectables](#collectables)
 - [Arrivée](#arrivée)
 - [HUD](#hud)
@@ -11,6 +12,15 @@ Super jeu tres cool où on pourra jouer en mode MONKEY ou en mode marble it up
 - [Bouton Niveau](#bouton-niveau)
 - [JEU](#jeu)
 
+
+### Level
+```
+Node3D :
+    - * staticbody (Terrain)
+    - Node3D (Spawn)
+    - Arrivée
+
+```
 
 ### Collectables
 
@@ -76,6 +86,8 @@ Sig :
 Button
     -Image screenshot du niveau [Export]
     -Level [Export]
+
+Faire une liste des niveaux qui créé automatiquement les boutons pour les mettre dans le menu
 ```
 
 ### JEU

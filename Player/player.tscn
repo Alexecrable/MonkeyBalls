@@ -49,7 +49,7 @@ radius = 0.4859482
 [node name="Player" type="Node3D" unique_id=979417825]
 script = ExtResource("1_l8h54")
 bodySpeed = 500.0
-camSpeed = 20.0
+camSpeed = 10.0
 camDistance = 1.5
 camFOV = 120.0
 

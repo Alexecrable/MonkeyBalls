@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://c8adr2tacuggm"]
+
+[ext_resource type="Script" uid="uid://b4vw0qwbd7m7t" path="res://Menu/MainMenu.cs" id="1_ci1se"]
+[ext_resource type="Theme" uid="uid://bynmuxdeb8mi3" path="res://Menu/base_theme.tres" id="1_sla5p"]
+
+[sub_resource type="Gradient" id="Gradient_7lkm1"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sla5p"]
+gradient = SubResource("Gradient_7lkm1")
+
+[node name="MainMenu" type="CanvasLayer" unique_id=555625134]
+script = ExtResource("1_ci1se")
+
+[node name="Background" type="TextureRect" parent="." unique_id=802174449]
+modulate = Color(0.22352941, 1, 1, 1)
+offset_right = 1919.0
+offset_bottom = 1088.0
+texture = SubResource("GradientTexture1D_sla5p")
+
+[node name="BaseMenu" type="VBoxContainer" parent="." unique_id=1332251404]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -16.0
+offset_right = 4.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_sla5p")
+theme_override_constants/separation = 36
+alignment = 1
+
+[node name="Play" type="Button" parent="BaseMenu" unique_id=1790796021]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Exit")
+focus_neighbor_bottom = NodePath("../LevelSelect")
+text = "Play"
+
+[node name="LevelSelect" type="Button" parent="BaseMenu" unique_id=1395531597]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Play")
+focus_neighbor_bottom = NodePath("../Exit")
+text = "Level Select"
+
+[node name="Exit" type="Button" parent="BaseMenu" unique_id=1172197358]
+layout_mode = 2
+focus_neighbor_top = NodePath("../LevelSelect")
+focus_neighbor_bottom = NodePath("../Play")
+text = "Exit"
+
+[node name="LevelSelect" type="GridContainer" parent="." unique_id=1403366445]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -20.0
+offset_right = 22.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_sla5p")
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 100
+columns = 3

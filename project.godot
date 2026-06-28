@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="MonkeyBalls"
-run/main_scene="res://testing.tscn"
+run/main_scene="uid://c81qjyq5yuimk"
 config/features=PackedStringArray("4.6", "C#", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
 
 [dotnet]
 
@@ -77,6 +85,18 @@ jump={
 "deadzone": 0.2,
 "events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":0,"pressure":0.0,"pressed":true,"script":null)
 ]
+}
+pause={
+"deadzone": 0.2,
+"events": []
+}
+return={
+"deadzone": 0.2,
+"events": []
+}
+camera={
+"deadzone": 0.2,
+"events": []
 }
 
 [physics]
