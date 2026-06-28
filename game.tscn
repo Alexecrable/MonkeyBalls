@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bagowwstohgkx" path="res://Game.cs" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://c8adr2tacuggm" path="res://Menu/main_menu.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://c2ok57ek12kkf" path="res://Menu/hud.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://bauq444vl81g2" path="res://Menu/pause_menu.tscn" id="4_fc0e3"]
 
 [node name="Game" type="Node3D" unique_id=1874157563]
 script = ExtResource("1_e2o6t")
@@ -10,4 +11,7 @@ script = ExtResource("1_e2o6t")
 [node name="MainMenu" parent="." unique_id=555625134 instance=ExtResource("2_feb5d")]
 
 [node name="Hud" parent="." unique_id=952796912 instance=ExtResource("3_feb5d")]
+visible = false
+
+[node name="PauseMenu" parent="." unique_id=531604541 instance=ExtResource("4_fc0e3")]
 visible = false

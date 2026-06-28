@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bauq444vl81g2"]
+
+[ext_resource type="Script" uid="uid://cyy6bt7tdtr2v" path="res://Menu/PauseMenu.cs" id="1_tv8f1"]
+[ext_resource type="Theme" uid="uid://bynmuxdeb8mi3" path="res://Menu/base_theme.tres" id="2_qxtyl"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=555625134]
+process_mode = 3
+script = ExtResource("1_tv8f1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1332251404]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -16.0
+offset_right = 4.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_qxtyl")
+theme_override_constants/separation = 36
+alignment = 1
+
+[node name="Resume" type="Button" parent="VBoxContainer" unique_id=1790796021]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Exit")
+text = "Resume
+"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1172197358]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Resume")
+text = "Exit"

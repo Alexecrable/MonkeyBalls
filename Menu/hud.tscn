@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bpp6g5slitfbs" path="res://Menu/Hud.cs" id="1_bse2e"]
 [ext_resource type="Theme" uid="uid://bynmuxdeb8mi3" path="res://Menu/base_theme.tres" id="1_lhoek"]
-[ext_resource type="Texture2D" uid="uid://cyepguv08xybn" path="res://BlenderAssets/Textures/Steak.png" id="2_bse2e"]
-[ext_resource type="Texture2D" uid="uid://c50vkilnlfow0" path="res://BlenderAssets/Textures/Wrap.png" id="3_ou5f1"]
+[ext_resource type="Texture2D" uid="uid://dwm287bpanb0i" path="res://Objects/TacosIcon.png" id="3_bse2e"]
+[ext_resource type="Texture2D" uid="uid://of85clfr2uej" path="res://Objects/LifeIcon.png" id="4_bse2e"]
+[ext_resource type="LabelSettings" uid="uid://3s7tyjeplitk" path="res://BlenderAssets/Exported/new_label_settings.tres" id="4_ou5f1"]
 
 [node name="Hud" type="CanvasLayer" unique_id=952796912]
 script = ExtResource("1_bse2e")
@@ -24,12 +25,13 @@ offset_bottom = 117.0
 
 [node name="TextureRect" type="TextureRect" parent="Control/TacosContainer" unique_id=778255739]
 layout_mode = 2
-texture = ExtResource("2_bse2e")
+texture = ExtResource("3_bse2e")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/TacosContainer" unique_id=1288958462]
 layout_mode = 2
 text = ": 24"
+label_settings = ExtResource("4_ou5f1")
 
 [node name="LivesContainer" type="HBoxContainer" parent="Control" unique_id=227617290]
 layout_mode = 1
@@ -44,12 +46,13 @@ grow_vertical = 0
 
 [node name="TextureRect" type="TextureRect" parent="Control/LivesContainer" unique_id=945884898]
 layout_mode = 2
-texture = ExtResource("3_ou5f1")
+texture = ExtResource("4_bse2e")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/LivesContainer" unique_id=52859005]
 layout_mode = 2
 text = ": 3"
+label_settings = ExtResource("4_ou5f1")
 
 [node name="TimerLabel" type="Label" parent="Control" unique_id=1009031270]
 layout_mode = 1
@@ -62,5 +65,7 @@ offset_right = 1840.0
 offset_bottom = 117.0
 grow_horizontal = 0
 text = "999"
+label_settings = ExtResource("4_ou5f1")
+horizontal_alignment = 2
 
 [node name="Timer" type="Timer" parent="." unique_id=247089997]
