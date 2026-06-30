@@ -13,12 +13,13 @@ public partial class MainMenu : CanvasLayer
 
 	private GridContainer levelSelectGrid;
 	private VBoxContainer baseMenu;
-	private Button playButton;
+	private Button playButton, playStyleButton;
+	private bool isMonkeyBall;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+		isMonkeyBall = false;
 		levelSelectGrid = GetNode<GridContainer>("LevelSelect");
 		playButton = GetNode<Button>("BaseMenu/Play");
 		playButton.GrabFocus();
@@ -31,9 +32,21 @@ public partial class MainMenu : CanvasLayer
 
 			levelSelectGrid.GetChild<Button>(0).GrabFocus();
 		};
+		playStyleButton = baseMenu.GetNode<Button>("PlayStyle");
+		playStyleButton.Pressed += () =>
+		{
+			isMonkeyBall = !isMonkeyBall;
+			String playStyleString = (isMonkeyBall) ? "MonkeyBall" : "Marble It Up";
+			playStyleButton.Text = "PlayStyle : " + playStyleString;
+		};
 		GetNode<Button>("BaseMenu/Exit").Pressed += () => {GetTree().Quit();};
 		
 		CreateLevelSelectMenu();
+	}
+
+	public bool IsMonkeyBall()
+	{
+		return isMonkeyBall;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

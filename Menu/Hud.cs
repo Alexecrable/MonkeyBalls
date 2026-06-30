@@ -7,34 +7,27 @@ public partial class Hud : CanvasLayer
 	public delegate void GameOverEventHandler();
 	private Label tacosLabel, livesLabel, timeLabel;
 	private int tacosCounter, livesCounter, timeCounter;
-	private Timer timer;
+	
+	private double timeElapsed;
 	private TextureRect tacosTexture;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		timeElapsed = 0;
 		tacosLabel = GetNode<Label>("Control/TacosContainer/Label");
 		livesLabel = GetNode<Label>("Control/LivesContainer/Label");
 		timeLabel = GetNode<Label>("Control/TimerLabel");
 		tacosTexture = GetNode<TextureRect>("Control/TacosContainer/TextureRect");
 		tacosCounter = 0;
 		livesCounter = 3;
-		timeCounter = 0;
-		timer = new Timer();
-		timer.Timeout += UpdateTime;
-		timer.Autostart = false;
-		timer.OneShot = false;
-		AddChild(timer);
+		
 	}
 
 	public void LaunchTimer()
 	{
-		timer.Start();
+		timeElapsed = 0;
 	}
 
-	public void StopTimer()
-	{
-		timer.Stop();
-	}
 
 	public void ResetTacos()
 	{
@@ -42,21 +35,14 @@ public partial class Hud : CanvasLayer
 		UpdateTacosLabel();
 	}
 
-	public void SetTime(int time)
-	{
-		timeCounter = time;
-		UpdateTimeLabel();
-	}
-
-	private void UpdateTime()
-	{
-		timeCounter--;
-		UpdateTimeLabel();
-		if(timeCounter == 0)
-		{
-			EmitSignal(SignalName.GameOver);
-		}
-	}
+	public override void _Process(double delta)
+    {
+        timeElapsed += delta;
+		int minutes = (int)timeElapsed / 60;
+		int seconds = (int)(timeElapsed - (minutes * 60));
+		int ms = (int)((timeElapsed - (minutes * 60) - seconds) * Math.Pow(10,3));
+		timeLabel.Text = minutes + ":" + seconds.ToString("00") + ":" + ms.ToString("000");
+    }
 
 	public void UpdateTacos(int tacosGain, Vector2 tacosPos)
 	{

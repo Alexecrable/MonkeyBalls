@@ -37,20 +37,18 @@ alignment = 1
 
 [node name="Play" type="Button" parent="BaseMenu" unique_id=1790796021]
 layout_mode = 2
-focus_neighbor_top = NodePath("../Exit")
-focus_neighbor_bottom = NodePath("../LevelSelect")
 text = "Play"
 
 [node name="LevelSelect" type="Button" parent="BaseMenu" unique_id=1395531597]
 layout_mode = 2
-focus_neighbor_top = NodePath("../Play")
-focus_neighbor_bottom = NodePath("../Exit")
 text = "Level Select"
+
+[node name="PlayStyle" type="Button" parent="BaseMenu" unique_id=381345162]
+layout_mode = 2
+text = "PlayStyle : Marble It Up"
 
 [node name="Exit" type="Button" parent="BaseMenu" unique_id=1172197358]
 layout_mode = 2
-focus_neighbor_top = NodePath("../LevelSelect")
-focus_neighbor_bottom = NodePath("../Play")
 text = "Exit"
 
 [node name="LevelSelect" type="GridContainer" parent="." unique_id=1403366445]

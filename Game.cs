@@ -10,7 +10,17 @@ public partial class Game : Node3D
 	private PauseMenu pauseMenu;
 	private MainMenu mainMenu;
 	private Player player;
+	[Export]
+	public bool isMonkeyBall;
 	private bool inGame;
+
+
+
+
+	/// <summary>
+	/// /////////
+	
+	/// </summary>
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -48,6 +58,8 @@ public partial class Game : Node3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+
+
 		bool pause = Input.IsActionPressed("pause");
 		GD.Print("pause " + pause);
 		if (pause)
@@ -97,19 +109,24 @@ public partial class Game : Node3D
 		//loadedLevel = ResourceLoader.Load<PackedScene>("res://Levels/" + lvlName + ".tscn");
 		currentLevel = ResourceLoader.Load<PackedScene>("res://Levels/" + lvlName + ".tscn").Instantiate<Level>();
 
-		hud.SetTime(currentLevel.Time);
 		LaunchLevel();
 	}
 
 	private void LaunchLevel()
 	{
-		RemoveChild(mainMenu);
 		AddChild(currentLevel);
+		player.SetSky(currentLevel.GetSky());
+		player.IsMonkeyBall = mainMenu.IsMonkeyBall();
 		player.Position = currentLevel.GetSpawnPointPos();
 		player.Rotation = currentLevel.GetSpawnPointRot();
-
+		
+		RemoveChild(mainMenu);
+		
 		AddChild(player);
+		
+		
 		player.init();
+		
 		hud.ResetTacos();
 		hud.LaunchTimer();
 		hud.Visible = true;
