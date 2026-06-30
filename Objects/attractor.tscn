@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cxrmtbklvx8r"]
+
+[ext_resource type="Script" uid="uid://bnh7uggwhc0d" path="res://Objects/Attractor.cs" id="1_8k7vf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t3gr2"]
+radius = 4.0
+
+[sub_resource type="Curve" id="Curve_ykovx"]
+_data = [Vector2(0, 0.37743193), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_lyxvx"]
+curve = SubResource("Curve_ykovx")
+
+[sub_resource type="Curve" id="Curve_v8x8i"]
+bake_resolution = 2
+_data = [Vector2(0, 0.33073932), 0.0, 0.0, 0, 0, Vector2(0.9907407, 0.9844358), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_k6fjq"]
+curve = SubResource("Curve_v8x8i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_okwfp"]
+emission_shape = 2
+emission_sphere_radius = 4.0
+radial_velocity_min = -2.5000224
+radial_velocity_max = -2.5000224
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_k6fjq")
+alpha_curve = SubResource("CurveTexture_lyxvx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xajmp"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_chdx3"]
+material = SubResource("StandardMaterial3D_xajmp")
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Attractor" type="Area3D" unique_id=405368479]
+script = ExtResource("1_8k7vf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=503674375]
+shape = SubResource("SphereShape3D_t3gr2")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=194774943]
+amount = 600
+process_material = SubResource("ParticleProcessMaterial_okwfp")
+draw_pass_1 = SubResource("BoxMesh_chdx3")

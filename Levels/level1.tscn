@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://be1ywog5n88e0" path="res://Levels/Level.cs" id="1_utqd4"]
 [ext_resource type="Texture2D" uid="uid://cgdbhg1s1of56" path="res://BlenderAssets/Exported/level1_Terrain.png" id="4_njhy2"]
+[ext_resource type="PackedScene" uid="uid://b2lqsseats5iq" path="res://Objects/bumper.tscn" id="7_aunfx"]
+[ext_resource type="PackedScene" uid="uid://cxrmtbklvx8r" path="res://Objects/attractor.tscn" id="8_j32wv"]
 [ext_resource type="PackedScene" uid="uid://dnvuumsa2p152" path="res://Objects/tacos.tscn" id="9_lr1ra"]
 [ext_resource type="PackedScene" uid="uid://bcea3x347orcr" path="res://Objects/goal.tscn" id="10_utqd4"]
 [ext_resource type="PackedScene" uid="uid://qu8fkfth12xo" path="res://BlenderAssets/Exported/SkyBox.glb" id="11_u55on"]
@@ -219,7 +221,6 @@ shape = SubResource("BoxShape3D_nq5j5")
 transform = Transform3D(0, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 0, 89.49539, 0.61308646, 17.231106)
 
 [node name="SkyBox" parent="." unique_id=1445717517 instance=ExtResource("11_u55on")]
-visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1430768787]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 61.518555, 0)
@@ -340,3 +341,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.252457, 1.3542395, -4.1238
 
 [node name="Tacos18" parent="." unique_id=1112266020 instance=ExtResource("9_lr1ra")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7475433, -0.6457608, -4.1238914)
+
+[node name="Bumper3" parent="." unique_id=1979070697 instance=ExtResource("8_j32wv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4557343, 3.3071012, -2.7470207)
+
+[node name="Bumper" parent="." unique_id=1901951740 instance=ExtResource("7_aunfx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.594871, -1.1187809, -0.40849638)
+
+[node name="BaseMonkey" type="Node3D" parent="." unique_id=2058873031]
+
+[node name="TargetMonkey" type="Node3D" parent="BaseMonkey" unique_id=1575279370]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1223189937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.352226, 0, 68.62775)

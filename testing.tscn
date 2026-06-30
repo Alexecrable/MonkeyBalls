@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c81qjyq5yuimk"]
+[gd_scene format=3 uid="uid://bavr4gtg12qhl"]
 
 [ext_resource type="PackedScene" uid="uid://b88c4p34v4qai" path="res://Player/player.tscn" id="1_qrja6"]
 [ext_resource type="PackedScene" uid="uid://dnvuumsa2p152" path="res://Objects/tacos.tscn" id="2_co24e"]
@@ -20,7 +20,6 @@ shape = SubResource("BoxShape3D_co24e")
 
 [node name="Player" parent="." unique_id=979417825 instance=ExtResource("1_qrja6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.706274, 9.137439, -8.46874)
-bodySpeed = 500.0
 camSpeed = 1.0
 
 [node name="Tacos" parent="." unique_id=1569250796 instance=ExtResource("2_co24e")]

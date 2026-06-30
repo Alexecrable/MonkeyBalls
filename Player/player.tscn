@@ -44,8 +44,11 @@ bodySpeed = 500.0
 camSpeed = 10.0
 camDistance = 1.5
 camFOV = 120.0
+mouseSensitivity = 0.01
 
 [node name="PlayerBody" type="RigidBody3D" parent="." unique_id=690458887]
+contact_monitor = true
+max_contacts_reported = 1
 
 [node name="player" parent="PlayerBody" unique_id=1444229763 instance=ExtResource("3_btcbx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -62,7 +65,8 @@ draw_skin = SubResource("Skin_gwnis")
 [node name="CameraAnchor" type="Node3D" parent="." unique_id=1615008968]
 
 [node name="Camera3D" type="Camera3D" parent="CameraAnchor" unique_id=1054058743]
-transform = Transform3D(1, 0, 0, 0, 0.98425734, 0.1767412, 0, -0.1767412, 0.98425734, 0, 0.57569695, 1.3945227)
+transform = Transform3D(1, 0, 0, 0, 0.9842573, 0.1767412, 0, -0.1767412, 0.9842573, 0, 0.576, 1.395)
+current = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=379786396]
 stream = ExtResource("3_gwnis")

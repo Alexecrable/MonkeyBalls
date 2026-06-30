@@ -7,6 +7,7 @@
 
 [node name="Game" type="Node3D" unique_id=1874157563]
 script = ExtResource("1_e2o6t")
+isMonkeyBall = true
 
 [node name="MainMenu" parent="." unique_id=555625134 instance=ExtResource("2_feb5d")]
 
@@ -15,3 +16,5 @@ visible = false
 
 [node name="PauseMenu" parent="." unique_id=531604541 instance=ExtResource("4_fc0e3")]
 visible = false
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1935827350]
