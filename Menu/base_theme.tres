@@ -1,5 +1,14 @@
 [gd_resource type="Theme" format=3 uid="uid://bynmuxdeb8mi3"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rnltk"]
+draw_center = false
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.9529412, 0.21176471, 0.7921569, 1)
+border_blend = true
+
 [sub_resource type="FontFile" id="FontFile_7lkm1"]
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
@@ -59,3 +68,5 @@ cache/0/62/0/scale = 1.0
 [resource]
 default_font = SubResource("FontFile_7lkm1")
 default_font_size = 62
+Button/colors/icon_focus_color = Color(0.9201308, 0.40932024, 0.76657933, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_rnltk")

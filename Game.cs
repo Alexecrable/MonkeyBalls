@@ -109,7 +109,6 @@ public partial class Game : Node3D
 		//loadedLevel = ResourceLoader.Load<PackedScene>("res://Levels/" + lvlName + ".tscn");
 		currentLevel = ResourceLoader.Load<PackedScene>("res://Levels/" + lvlName + ".tscn").Instantiate<Level>();
 
-		hud.SetTime(currentLevel.Time);
 		LaunchLevel();
 	}
 
