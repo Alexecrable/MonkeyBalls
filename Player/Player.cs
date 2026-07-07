@@ -1,7 +1,10 @@
 
 using System;
+using System.Transactions;
 using Godot;
 
+/// FAIRE TOURNER LA BOULE AU LIEU D'APPLIQUER UNE FORCE EXTERIEURE POUR VOIR SI ÇA LA FAIT AVANCER
+/// 
 public partial class Player : Node3D
 {
 	[Signal]
@@ -23,16 +26,17 @@ public partial class Player : Node3D
 	private Node3D cameraAnchor, skyBox;
 	private Camera3D camera;
 	private Timer respawnTimer;
+	private bool started;
 
 	private float xCamSave, yCamSave;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-
+		
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 
-
+		started = false;
 		musicPlayer = GetNode<AudioStreamPlayer3D>("AudioStreamPlayer3D");
 
 		body = GetNode<RigidBody3D>("PlayerBody");
@@ -47,6 +51,7 @@ public partial class Player : Node3D
 		cameraSavePos = camera.Position;
 		cameraSaveRot = camera.Rotation;
 		body.BodyEntered += BodyEntered;
+		body.GravityScale = 0;
 		dying = false;
 		respawnTimer = new Timer
 		{
@@ -101,6 +106,12 @@ public partial class Player : Node3D
 	public override void _PhysicsProcess(double delta)
 	{
 
+		if (!started)
+		{
+			
+			
+			return;
+		}
 		GD.Print("music" + musicPlayer.GlobalPosition);
 		musicPlayer.Position = body.Position;
 		if (dying)
@@ -160,6 +171,11 @@ public partial class Player : Node3D
 
 	}
 
+	public void CountDownEnd()
+	{
+		started = true;
+		body.GravityScale = 1;
+	}
 	public void EndLevel()
 	{
 		EmitSignal(SignalName.LevelEnd);
