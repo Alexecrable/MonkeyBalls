@@ -147,11 +147,15 @@ public partial class Player : Node3D
 
 
 
-			Vector3 ballPushVector = new Vector3(movementDirection.X, 0, movementDirection.Y).Rotated(Vector3.Up, cameraAnchor.GlobalRotation.Y) * realBodySpeed;
+			Vector3 ballPushVector = new Vector3(movementDirection.Y, 0, -movementDirection.X).Rotated(Vector3.Up, cameraAnchor.GlobalRotation.Y) * realBodySpeed /2;
+			if (!ballPushVector.IsZeroApprox())
+			{
+				body.ApplyTorque(ballPushVector);
+			//body.Rotate(ballPushVector.Normalized(), -0.1f);
+				
+			}
 
-
-
-			body.ApplyCentralForce(ballPushVector);
+			//body.ApplyCentralForce(ballPushVector);
 		}
 		else
 		{

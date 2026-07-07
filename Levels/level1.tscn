@@ -11,6 +11,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_nq5j5"]
 size = Vector3(217.16724, 3, 252.15881)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aunfx"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oqh2r"]
 resource_name = "Terrain.001"
 cull_mode = 2
@@ -228,6 +230,7 @@ omni_range = 4096.0
 omni_attenuation = 0.01
 
 [node name="Terrain" type="StaticBody3D" parent="." unique_id=86775474]
+physics_material_override = SubResource("PhysicsMaterial_aunfx")
 
 [node name="Plat_029" type="MeshInstance3D" parent="Terrain" unique_id=824968349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.31006, -0.96388626, 17.123533)

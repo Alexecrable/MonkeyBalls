@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://b6k2cns54qen5" path="res://BlenderAssets/Exported/player.glb" id="3_btcbx"]
 [ext_resource type="AudioStream" uid="uid://ck1i37b1np2sd" path="res://Menu/6 - Angor.mp3" id="3_gwnis"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_btcbx"]
+friction = 0.7
+bounce = 0.41
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_earb5"]
 radius = 0.50546885
 
@@ -47,6 +51,7 @@ camFOV = 120.0
 mouseSensitivity = 0.01
 
 [node name="PlayerBody" type="RigidBody3D" parent="." unique_id=690458887]
+physics_material_override = SubResource("PhysicsMaterial_btcbx")
 contact_monitor = true
 max_contacts_reported = 1
 
