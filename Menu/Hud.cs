@@ -34,6 +34,11 @@ public partial class Hud : CanvasLayer
 		//timer.Timeout += CountDownStep;
 	}
 
+	public void SaveScore()
+	{
+		
+	}
+
 	public void LaunchCountDown()
 	{
 		countDownStep = 3;
@@ -89,7 +94,16 @@ public partial class Hud : CanvasLayer
 		UpdateTacosLabel();
 	}
 
+	public double GetTime()
+	{
+		return timeElapsed;
 
+	}
+
+	public int GetTacos(){
+		return tacosCounter;
+	}
+	
 
 	public override void _Process(double delta)
 	{

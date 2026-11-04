@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dyt45pam0aua5"]
+
+[ext_resource type="PackedScene" uid="uid://dj6to6oligxtv" path="res://BlenderAssets/Exported/essai.glb" id="1_85sxh"]
+
+[node name="essai" unique_id=490239612 instance=ExtResource("1_85sxh")]

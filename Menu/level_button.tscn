@@ -1,10 +1,34 @@
 [gd_scene format=3 uid="uid://njjr6edhufrs"]
 
 [ext_resource type="Script" uid="uid://dchr7s58pfsb3" path="res://Menu/LevelButton.cs" id="1_h43ld"]
-[ext_resource type="Texture2D" uid="uid://cbuuukowba66v" path="res://Levels/Previews/level2.png" id="1_qtx6g"]
+[ext_resource type="Texture2D" uid="uid://o7r5eu1xk3cu" path="res://Levels/Previews/level1.png" id="2_gxpvt"]
+[ext_resource type="Texture2D" uid="uid://dwm287bpanb0i" path="res://Objects/TacosIcon.png" id="3_gxpvt"]
 
-[node name="LevelButton" type="Button" unique_id=1977222029]
-offset_right = 208.0
-offset_bottom = 208.0
-icon = ExtResource("1_qtx6g")
+[node name="Button" type="Button" unique_id=1977222029]
+offset_right = 210.0
+offset_bottom = 210.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_h43ld")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=60540611]
+layout_mode = 0
+offset_right = 208.0
+offset_bottom = 235.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1952481669]
+layout_mode = 2
+texture = ExtResource("2_gxpvt")
+expand_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=75241495]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1325651907]
+layout_mode = 2
+texture = ExtResource("3_gxpvt")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1655586405]
+layout_mode = 2
+text = ": 10"

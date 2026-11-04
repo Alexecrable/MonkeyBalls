@@ -106,12 +106,12 @@ public partial class Player : Node3D
 	public override void _PhysicsProcess(double delta)
 	{
 
-		if (!started)
-		{
-			
-			
-			return;
-		}
+		//if (!started)
+		//{
+		//	
+		//	
+		//	return;
+		//}
 		GD.Print("music" + musicPlayer.GlobalPosition);
 		musicPlayer.Position = body.Position;
 		if (dying)

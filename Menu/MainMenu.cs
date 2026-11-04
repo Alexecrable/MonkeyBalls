@@ -9,28 +9,32 @@ public partial class MainMenu : CanvasLayer
 	public delegate void LoadLevelEventHandler(String lvlName);
 	private Array<String> levelList = [
 		"level1",
+		"level2"
 	];
 
 	private GridContainer levelSelectGrid;
 	private VBoxContainer baseMenu;
 	private Button playButton, playStyleButton;
+	private PackedScene levelButtonScene;
 	private bool isMonkeyBall;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+
+		levelButtonScene = ResourceLoader.Load<PackedScene>("res://Menu/level_button.tscn");
 		isMonkeyBall = false;
 		levelSelectGrid = GetNode<GridContainer>("LevelSelect");
 		playButton = GetNode<Button>("BaseMenu/Play");
 		playButton.GrabFocus();
-		GetNode<Button>("BaseMenu/Play").Pressed += () => {EmitSignal(SignalName.LoadLevel, "level1");};
+		GetNode<Button>("BaseMenu/Play").Pressed += () => {EmitSignal(SignalName.LoadLevel, "level2");};
 		baseMenu = GetNode<VBoxContainer>("BaseMenu");
 		baseMenu.GetNode<Button>("LevelSelect").Pressed += () =>
 		{
 			baseMenu.Visible = false;
 			levelSelectGrid.Visible = true;
 
-			levelSelectGrid.GetChild<Button>(0).GrabFocus();
+			levelSelectGrid.GetChild<LevelButton>(0).GrabFocus();
 		};
 		playStyleButton = baseMenu.GetNode<Button>("PlayStyle");
 		playStyleButton.Pressed += () =>
@@ -67,7 +71,8 @@ public partial class MainMenu : CanvasLayer
 		{
 			String lvlName = levelList[i];
 			CompressedTexture2D img = ResourceLoader.Load<CompressedTexture2D>("res://Levels/Previews/" + lvlName + ".png");
-			LevelButton levelButton = new LevelButton(levelList[i], img);
+			LevelButton levelButton = levelButtonScene.Instantiate<LevelButton>();
+			levelButton.InitButton(lvlName, img);
 			
 			
 			levelButton.Pressed += () =>
