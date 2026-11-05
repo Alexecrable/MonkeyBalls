@@ -9,7 +9,8 @@ public partial class MainMenu : CanvasLayer
 	public delegate void LoadLevelEventHandler(String lvlName);
 	private Array<String> levelList = [
 		"level1",
-		"level2"
+		"level2",
+		"level3"
 	];
 
 	private GridContainer levelSelectGrid;
