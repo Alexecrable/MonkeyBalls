@@ -5,8 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://ck1i37b1np2sd" path="res://Menu/6 - Angor.mp3" id="3_gwnis"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_btcbx"]
-friction = 0.7
-bounce = 0.41
+bounce = 0.15
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_earb5"]
 radius = 0.50546885
@@ -44,11 +43,14 @@ rings = 4
 
 [node name="Player" type="Node3D" unique_id=979417825]
 script = ExtResource("1_l8h54")
-bodySpeed = 500.0
+bodySpeed = 800.0
 camSpeed = 6.0
 camDistance = 1.5
 camFOV = 120.0
 mouseSensitivity = 0.01
+jumpForce = 10.0
+dashForce = 3.0
+dashCoolDownTime = 1.0
 
 [node name="PlayerBody" type="RigidBody3D" parent="." unique_id=690458887]
 physics_material_override = SubResource("PhysicsMaterial_btcbx")
@@ -76,4 +78,3 @@ current = true
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=379786396]
 stream = ExtResource("3_gwnis")
 volume_db = 8.972
-autoplay = true

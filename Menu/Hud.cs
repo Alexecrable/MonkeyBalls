@@ -36,7 +36,7 @@ public partial class Hud : CanvasLayer
 
 	public void SaveScore()
 	{
-		
+
 	}
 
 	public void LaunchCountDown()
@@ -76,7 +76,7 @@ public partial class Hud : CanvasLayer
 				ResetTacos();
 				LaunchTimer();
 				EmitSignal(SignalName.CountDownEnd);
-				
+
 			}
 		};
 	}
@@ -100,10 +100,11 @@ public partial class Hud : CanvasLayer
 
 	}
 
-	public int GetTacos(){
+	public int GetTacos()
+	{
 		return tacosCounter;
 	}
-	
+
 
 	public override void _Process(double delta)
 	{
@@ -137,12 +138,16 @@ public partial class Hud : CanvasLayer
 	}
 	public void LoseLife()
 	{
+
 		livesCounter--;
 		UpdateLifeLabel();
+		countDownLabel.Visible = true;
+		controlNode.Visible = false; //Casse la souris ????
 		if (livesCounter == 0)
 		{
 			EmitSignal(SignalName.GameOver);
 		}
+
 	}
 
 	private void UpdateLifeLabel()

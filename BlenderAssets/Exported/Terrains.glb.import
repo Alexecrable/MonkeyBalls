@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c7mdjbda4dm1g"
+uid="uid://2rjhoboqd3or"
 path="res://.godot/imported/Terrains.glb-d65f9dcac5ddc4b9e1e557096cc41092.scn"
 
 [deps]
@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/Terrains.glb-d65f9dcac5ddc4b9e1e557096cc41092
 
 [params]
 
-nodes/root_type="Node"
-nodes/root_name="Terrains"
+nodes/root_type=""
+nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

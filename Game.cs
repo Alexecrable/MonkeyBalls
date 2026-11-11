@@ -52,6 +52,8 @@ public partial class Game : Node3D
 		player.TacosCollect += hud.UpdateTacos;
 		inGame = false;
 		player.DeathSignal += hud.LoseLife;
+		player.SpawnSignal+= hud.LaunchCountDown;
+		
 
 		hud.CountDownEnd += player.CountDownEnd;
 		//player.DeathSignal += Respawn;
@@ -129,7 +131,7 @@ public partial class Game : Node3D
 		
 		player.init();
 		
-		hud.LaunchCountDown();
+		//hud.LaunchCountDown();
 		hud.Visible = true;
 		inGame = true;
 	}

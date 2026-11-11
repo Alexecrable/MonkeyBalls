@@ -6,7 +6,7 @@ public partial class Level : Node3D
 {
 	[Export]
 	public int Time { get; set; }
-	private Node3D baseMonkeyBall, targetMonkeyBall, skyBox;
+	private Node3D skyBox;
 	private Vector3 spawnPointPos, spawnPointRot;
 	
 	// Called when the node enters the scene tree for the first time.
@@ -16,10 +16,10 @@ public partial class Level : Node3D
 		spawnPointPos = spawnNode.Position;
 		spawnPointRot = spawnNode.Rotation;
 		spawnNode.QueueFree();
-		baseMonkeyBall = GetNode<Node3D>("BaseMonkey");
-		targetMonkeyBall = GetNode<Node3D>("BaseMonkey/TargetMonkey");
+		//baseMonkeyBall = GetNode<Node3D>("BaseMonkey");
+		//targetMonkeyBall = GetNode<Node3D>("BaseMonkey/TargetMonkey");
 		skyBox = GetNode<Node3D>("SkyBox");
-		GetNode<Area3D>("DeathFloor").BodyEntered += DeathFloorEntered;
+		GetNode<Area3D>("DeathFloor").BodyExited += DeathFloorExited;
 
 	}
 
@@ -29,7 +29,7 @@ public partial class Level : Node3D
 	}	
 	
 
-	private void DeathFloorEntered(Node3D body)
+	private void DeathFloorExited(Node3D body)
 	{
 		if (body.Name == "PlayerBody")
 		{

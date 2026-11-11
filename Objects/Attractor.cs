@@ -18,7 +18,7 @@ public partial class Attractor : Area3D
 		{
 			GD.Print("tenteative de meurtre");
 			Vector3 offset = GlobalPosition - body.GlobalPosition;
-			body.ApplyForce(offset * 500 * (float)delta);
+			body.ApplyForce(offset * 5000 * (float)delta);
 		}
 	}
 

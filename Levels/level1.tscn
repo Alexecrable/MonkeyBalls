@@ -12,6 +12,7 @@
 size = Vector3(217.16724, 3, 252.15881)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aunfx"]
+friction = 0.9
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oqh2r"]
 resource_name = "Terrain.001"

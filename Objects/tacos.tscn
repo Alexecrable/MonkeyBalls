@@ -4,21 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://ceptmlhy5xf73" path="res://BlenderAssets/Exported/Tacos.glb" id="2_bps4p"]
 [ext_resource type="AudioStream" uid="uid://ddtd7epiqltd6" path="res://Objects/tacos.ogg" id="3_7tccj"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_m2u7x"]
-size = Vector3(0.3677063, 0.8048706, 0.5383148)
+[sub_resource type="SphereShape3D" id="SphereShape3D_7tccj"]
+radius = 0.44225326
 
 [node name="Tacos" type="Node3D" unique_id=1569250796]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_phaq8")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=326483206]
-transform = Transform3D(0.89179754, -0.45243472, 0, 0.45243472, 0.89179754, 0, 0, 0, 1, 0.061496973, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1770307209]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009689171, 0.6388248, -0.027259827)
-shape = SubResource("BoxShape3D_m2u7x")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6088275, 0)
+shape = SubResource("SphereShape3D_7tccj")
 
 [node name="Body" parent="." unique_id=1811800086 instance=ExtResource("2_bps4p")]
-transform = Transform3D(0.90482706, -0.42577928, 0, 0.42577928, 0.90482706, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.90482706, -0.42577928, 0, 0.42577928, 0.90482706, 0, 0, 0, 1, 0.1804142, 0, 0)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2077617686]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64345515, 0)
